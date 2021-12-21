@@ -4,73 +4,109 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Form Test</title>
-
-    <style>
-        .cWrapper {
-            width: 600px;
-            margin: 0 auto;
-            padding-top: 20px;
-        }
-
-        .myButton {
-            background-color: cadetblue;
-            border: cadetblue;
-            height: 50px;
-            font-size: 18px;
-            font-weight: 500;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <link rel="stylesheet" href="enquiry.css">
+    <title>Enquiry Form</title>
 </head>
 
 <body>
-    <h3 class="text-center pt-5">Form Test</h3>
 
-    <div id="divManikEnquiry">
-        <div class="cWrapper">
-            <form>
 
-                <div class="col-md-12 col-lg-12 mt-2 mb-3">
-                    <label for="inputName" class="form-label">Enter Your Name</label>
-                    <input type="name" name="Name" class="form-control" id="#ID#" placeholder="Name">
+    <div class="cEnquiry_Process">
+        <div class="cEnquiryForm">
+            <div class="container d-flex justify-content-center cContactus">
+                <div class="contact px-5 py-5 w-100">
+                    <div id="divManikEnquiry">
+                        <h1 class="text-center">#PAGEHEADER#</h1>
+                        <div class="cEnquiry-inner-form">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group cEnqData">
+                                            <label cEnqName="Name">Name *</label>
+                                            <input type="text" name="Name" class="form-control cEnqValue "
+                                                placeholder="Please enter your name" required="required"
+                                                data-error="Firstname is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group cEnqData">
+                                            <label cEnqEmail="Email">Email *</label>
+                                            <input type="email" name="Email" class="form-control cEnqValue "
+                                                placeholder="Please enter your email" required="required"
+                                                data-error="Valid email is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group cEnqData">
+                                            <label cEnqPhone="Phone_Number">Phone</label>
+                                            <input type="number" name="Phone" class="form-control cEnqValue "
+                                                placeholder="Please enter your phone">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group cEnqData">
+                                            <label cEnqMessage="Your_Message">Details *</label>
+                                            <textarea name="Message" class="form-control cEnqValue"
+                                                placeholder="Please enter your message" rows="4" required="required"
+                                                data-error="Please,leave us a message."></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <!-- <div class="col-md-7 mb-4" style="margin-left: 0;">
+                                            <div class="custom-file">
+                                                <input cEnqUploadfour="Upload_Certificate" for="Upload File" type="file"
+                                                    class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile">Please upload your
+                                                    file</label>
+                                            </div>
+                                        </div> -->
+                                        <div class="col-md-12 mb-4 ml-3">
+                                            <button class="btn btn-block btn-success cContactbtn cManikSubmitEnquiry">Send Message
+                                                <i class="fa fa-long-arrow-right ml-2 mt-1"></i></button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </form>
+                        </div> <!-- cEnquiry-inner-form -->
+
+                        <div class="success-msg" id="iEnquirySuccess" style="display:none">
+                            <i class="fa fa-check"></i>
+                            Your Enquiry has been submitted successfully.
+                        </div>
+                        <div class="error-msg" id="iEnquiryFailure" style="display:none">
+                            <i class="fa fa-times-circle"></i>
+                            This is a error message.
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="mb-3">
-                    <label for="inputEmail" class="form-label">Enter Your Email</label>
-                    <input type="email" name="Email" class="form-control" id="#ID#" placeholder="Email">
-                </div>
+            </div>
 
-                <div class="mb-3">
-                    <label for="inputPhone" class="form-label">Enter Your Mobile</label>
-                    <input type="number" name="Phone" class="form-control" id="#ID#" placeholder="Mobile">
-                </div>
-
-                <div class="d-grid mb-3">
-                    <button type="submit" class="btn btn-primary myButton cManikSubmitEnquiry">Submit</button>
-                </div>
-
-            </form>
         </div>
-
-        <div class="success-msg" id="iEnquirySuccess" style="display:none">
-            <i class="fa fa-check"></i>
-            Your Enquiry has been submitted successfully.
-        </div>
-        <div class="error-msg" id="iEnquiryFailure" style="display:none">
-            <i class="fa fa-times-circle"></i>
-            This is a error message.
-        </div>
-
     </div>
 
-
-    <!-- Optional JavaScript; choose one of the two! -->
-    <script src="https://website.instaciti.com/assets/script/BusinessEnquiery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Optional JavaScript -->
+    <script src="enquiry.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </body>
 
